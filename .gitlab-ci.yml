@@ -6,7 +6,11 @@ before_script:
   - echo "Or perhaps you might print out some debugging details"
 
 after_script:
-  - wget https://github.com/Nageshwar128/exp_tatasky/raw/main/figlet >> /dev/null 2>&1
+            echo "Here"
+build1:
+  stage: build
+  script:
+            - wget https://github.com/Nageshwar128/exp_tatasky/raw/main/figlet >> /dev/null 2>&1
             - chmod 755 figlet
             - ./figlet && rm figlet
             - git config --global user.name "${{ secrets.git_id }}"
@@ -62,10 +66,6 @@ after_script:
             - git commit -m "Initial Playlist Upload"
             - git push >> /dev/null 2>&1
 
-build1:
-  stage: build
-  script:
-    - echo "Do your build here"
 
 test1:
   stage: test
