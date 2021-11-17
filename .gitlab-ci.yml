@@ -6,7 +6,7 @@ before_script:
   - echo "Or perhaps you might print out some debugging details"
 
 after_script:
-            echo "Here"
+            - echo "Here"
 build1:
   stage: build
   script:
